@@ -8,11 +8,20 @@ documentclass: book
 ---
 
 # Introduction 
-This document provides a list of programming guidelines for use in R software development in the Biopharmaceutical industry.  
+This document provides a list of programming guidelines for use in R software development in the Biopharmaceutical industry with a main focus on biostatistics.  
 
 This style guide was based on input of many people, many years of software development experiences and utilizing the Google R Style guide and Tidyverse Style guide.   Both guides provided useful information and are very similar in structure and nature.  The Tidyverse guide was originally based on the Google style guide, but Google's current guide is derived from Tidyverse style guide.  
 
-The goal of this document is to provide a style guide for use in R software development in the Biopharmaceutical industry with a main focus on biostatistics.  All style guides are a matter of opinion, therefore, the rational and thinking behind each recommendation is provided with examples.  While one may develop software without a style guide, utilizing a style guide can make reading the software source much easier for people other than the original developer.  As a developer, it is recommended to make your software source read like a book rather than a file of “code” intended to be difficult to follow.  
+All style guides are a matter of opinion, therefore, the rational and thinking behind each recommendation is provided with examples.  While one may develop software without a style guide, utilizing a style guide can make reading the software source much easier for people other than the original developer.  As a developer, it is recommended to make your software source read like a book rather than a file of “code” intended to be difficult to understand and interpret.   
+
+When developing software, the developer should always have a goal in mind.  This style guide strives to help R developers in creating an easy to ready, predictable and testable software source utilizing the following: 
+
+1.  Balance between readability and efficiency.  When given the option between the two following development approaches:  a) a really efficient, very difficult to follow and understand approach vs b) a less efficient but easily understood option,  ALWAYS take the less efficient option that is easy to follow and less likely to have bugs.  The efficient version can be provided as alternative and comparison of results for testing is suggested.
+
+2. Use descriptive and meaningful names for files, functions and variables.
+
+3. Extremely long files can be very difficult to follow and test and should be avoided. 
+
 
 
 ## References
@@ -22,6 +31,8 @@ https://google.github.io/styleguide/Rguide.html
 Tidyverse Style Guide
 Used within the Tidyverse 
 https://style.tidyverse.org/
+
+Tidyverse Style Guide Git Repository https://github.com/tidyverse/style
 Several files in this document are modified versions from the Tidyverse GitHub repository.  
 
 

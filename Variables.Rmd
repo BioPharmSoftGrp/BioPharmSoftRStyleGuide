@@ -1,3 +1,45 @@
 # Variables
 
 ## Naming
+
+Variable names should be meaningful and descriptive.  Do not use special characters in the variable names, use only letters or numbers. That is, no spaces, - or _ should be included in a variable name.  While - or _ do make the variables names more readable than running words together like runningwordstogether, the use of - (not allowed in R) or _ requires extra key strokes.  Do not use a . in variable names as this can cause confusion for the S3 object system.  
+
+Variable names should be in camelCase with the first letter being lower case.  For example, sampleMean and not SampleMean as the the first letter capital is reserved for function names. 
+
+Abbreviating long words with a common abbreviation is acceptable but be consistent within a code base or repository.  For example, Qty or Quant for Quantity, Pat or Pats for Patients.  Avoid using single letter abbreviations.  
+
+Single letter variable names should only be used for looping variables, but it is often easier to read and follow your source code if the looping variable is meaningful.  For example, using iPat is better than i as an variable that loops over patients in a vector and is easier to follow.  
+
+Since R does not require types, for example integer, double, vector etc it can be VERY help and there for strongly encouraged to use common prefixes for variable names. 
+
+Use the following prefixes to help other understand what the intended type of a variable is.
+     a.  Prefix integer variable with an n then camel case, eg nQtyOfReps would be an integer variable for the quantity of replications, nQtyOfPats = quantity of patients
+     b. Prefix double of float variables with d, eg dMean would be a double/float variable for mean.
+     c. Prefix vectors with v, eg vMeans would be a vector of means
+     d. Prefix matrix with m, eg mVarCov would be a matrix for the variance-covariance.
+     e. Prefix list with a l, eg lData would be list of data
+     f. Prefix a class variable with a c, eg cAnalysis = structure( list(), class= "TTest"" )
+
+    # Good Examples
+    qtyOfPatients 
+    nQtyOfPatient   # Better name because it is clear it should be an integer
+    
+    sampleMeans  
+    vSampleMeans    # Better name because it is clear that a vecor of values is expected
+    
+    dStdDev         # Std Dev is a common abbrivation for standard diviation
+    
+    for(i in vPatients){
+        vTreatment[i] <- vPatients[i]
+    }
+    
+    # Better example because more complex loops the iPat is clearer than i
+    for(iPat in vPatients){
+        vTreatment[iPat] <- vPatients[iPat]
+    }
+    
+    # Bad Examples
+    xxx
+    sd 
+    x.m.3   
+    x.mad 
