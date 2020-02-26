@@ -1,0 +1,13 @@
+output_dir: "docs"
+
+delete_merged_file: true
+
+rmd_files: [
+  "index.Rmd",
+ 
+    "Files.Rmd",
+    "Functions.Rmd",
+    "Variables.Rmd"
+]
+
+

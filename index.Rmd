@@ -1,0 +1,27 @@
+---
+title: "R Style Guide"
+author: ["J. Kyle Wathen", "Add other Authors"]
+date: "2/25/2020"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+---
+
+# Introduction 
+This document provides a list of programming guidelines for use in R software development in the Biopharmaceutical industry.  
+
+This style guide was based on input of many people, many years of software development experiences and utilizing the Google R Style guide and Tidyverse Style guide.   Both guides provided useful information and are very similar in structure and nature.  The Tidyverse guide was originally based on the Google style guide, but Google's current guide is derived from Tidyverse style guide.  
+
+The goal of this document is to provide a style guide for use in R software development in the Biopharmaceutical industry with a main focus on biostatistics.  All style guides are a matter of opinion, therefore, the rational and thinking behind each recommendation is provided with examples.  While one may develop software without a style guide, utilizing a style guide can make reading the software source much easier for people other than the original developer.  As a developer, it is recommended to make your software source read like a book rather than a file of “code” intended to be difficult to follow.  
+
+
+## References
+Google’s R Style Guide
+https://google.github.io/styleguide/Rguide.html
+
+Tidyverse Style Guide
+Used within the Tidyverse 
+https://style.tidyverse.org/
+Several files in this document are modified versions from the Tidyverse GitHub repository.  
+
+

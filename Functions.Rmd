@@ -1,0 +1,79 @@
+# Functions
+
+
+## Naming 
+Function names should be meaningful and descriptive and provide insight to what the function does.  This style agrees with Google's recommendation of using BigCamelCase for function names.  Do not use special characters in the function name, but use letters or numbers is acceptable. That is, -, . and _ should not be included in a function name.  While - or _ do make the function names more readable than running words together like functionname, the use of - or _ requires extra key strokes when compared to BigCamelCase where the first letter of each word is capitalized.   To avoid confusion with S3 methods a . should not be used in a function name unless it is to define an S3 method, see example below. 
+
+In addition, it is recomended that function names should contain verbs or a word that describes the action the function performs.   Vague generic function names like PerformTasks() or Com() should not be used.   
+
+    # Good Example 
+    ComputePosteriorParameters()
+    ComputePosteriorParameters.BetaBinom()   # If ComputePosteriorParameters is a generic function this is fine
+    SimulatePatientArrivalTimes()
+    
+    # Bad Example
+    post.par()        # Incorrect name capitalization and including ., non-descriptive
+    arrival-time()    # Incorrect name capitalization and including -
+    addhr()           # Capitalizaiton and vague
+    ComputePosteriorParameters.BetaBinom()   # If ComputePosteriorParameters is NOT a generic function this is not acceptable
+    
+
+## Structure
+Functions should be self contained and only depend on the arguments.  They should NOT use variables in a higher scope.  A call
+to a function with the same arguments should always return the same value, unless the function is supposed to produce random variables ect.
+[Question:  What does everyone thing about there not being a preceding and trailing space before the first arugment and after the last argument?  I prefer function( x, y ), but tidyverse  suggests not putting spaces inside or outside side of paraenteses see https://style.tidyverse.org/syntax.html#spacing so it would allow function(x, y) but not function( x, y ).  
+
+Also, I have always put the { } for a function in line with each other and the first letter of the function name like the examples below but both TV and Google recomend the opening { after function, for example 
+Add2 <- function(x) {
+    X <- x + 2
+    return(x)
+}
+
+I am okay with either approach.  ]
+
+    # Example
+
+    #--------------------------------------------------------------------------------------
+    # VERY BAD STYLE -  What this function returns depends on what y was before the call
+    #--------------------------------------------------------------------------------------#
+    MyFunction <- function(x)
+    {
+        x <- x + y
+        return(x)
+    }
+
+    y <- 5
+    MyFunction(4)   # return 9
+    y <- 10
+    MyFunction(4)    #returns 14
+
+    #######
+    #Acceptable example - a call to the function only depends on arguments
+    #######
+    MyFunction2 <- function( x, y )
+    {
+        x <- x + y
+        return( x )
+    }
+
+    y <- 5
+    MyFunction2( 4, 7 )   # return 11
+    y <- 10
+    MyFunction2( 4, 7 )    #returns 7
+    
+## Explicit Returns
+
+Do NOT rely on R's implicit return feature as an explicit return is mucher clearer for the reader.  Tidyverse and Google do not agree on this recomendation and this guide follows Google as it is much more transparent to developers that may not be as familar with R.
+
+    # Good Example - explicit return
+    MyFunction(x, y)
+    {
+        return(x + y)
+    }
+    
+    # Bad Example - rely on explicit return can be confusing and more error prone
+    MyFunction(x, y)
+    {
+        x + y
+    }
+    

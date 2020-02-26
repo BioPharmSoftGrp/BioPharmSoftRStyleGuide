@@ -1,0 +1,47 @@
+# Files
+
+## File Naming
+File names should be meaningful and end in .R.  This style agrees with Google's recommendation of using BigCamelCase for file names.  Do not use special characters in the file name, but use letters or numbers is acceptable. That is, no spaces, - or _ should be included in a file name.  While - or _ do make the file names more readable than running words together like runningwordstogether, the use of - or _ requires extra key strokes when compared to BigCamelCase where the first letter of each word is capitalized.   
+
+File names should be descriptive and provide insight into what the file contains.  Generic names like foo.r or stuff.r should not be used.   Vague file names like calculate.r are discouraged and more descriptive like CalculatePosteriorProbs.R are preferred.   
+
+Examples:
+
+    # Good Examples
+    CalcuatePosteriorProbs.R
+    AnalyzeSurvivalData.R 
+    InputFunctions.R
+    
+    # Bad 
+    calculate.r
+    foo.r
+    get file name.r
+    functions for stuff.r 
+    
+If files should be viewed or executed in a particular order, prefix the file name with a number using two digit format starting at 00.
+
+    00_SimulateData.R
+    01_SimulateArrivalTimes.R
+    02_CreateDataSet.R
+    ...
+    09_LogisticRegressionModel.R
+    10_BetaBinomialModel.R
+    
+Capitalization can be important when sharing files with collaborators on differing operating systems and source control systems.  Do not name files where the only difference is the capitalization. 
+
+## File Organization 
+
+ 
+ 
+## Internal Structure
+
+Files should be kept as short as possible and not include numerous functions or R source.  If a file contains many functions and is very long, it should be broken into meaningful files to group common functionality.  Break the file into meaningful code blocks, preferably as functions, and separate code blocks by comments using -, # or =. [ QUESTION: Should we all all 3 or just a subset? ]
+
+    # Create simulated data ------ 
+    
+    # Plot results ====
+    
+    # Save output ####
+
+Each comment should end with 4 consecutive -, # or = as this helps with providing well organized outline in R studio.
+In addition, 
