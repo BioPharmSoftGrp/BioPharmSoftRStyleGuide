@@ -21,7 +21,7 @@ In addition, it is recommended that function names should contain verbs or a wor
 ## Structure
 Functions should be self contained and only depend on the arguments.  They should NOT use variables in a higher scope.  A call
 to a function with the same arguments should always return the same value, unless the function is supposed to produce random variables ect.
-[Question:  What does everyone thing about there not being a preceding and trailing space before the first argument and after the last argument?  I prefer function( x, y ), but Tidyverse  suggests not putting spaces inside or outside side of parentheses see https://style.tidyverse.org/syntax.html#spacing so it would allow function(x, y) but not function( x, y ).  
+[QUESTION:  What does everyone thing about there not being a preceding and trailing space before the first argument and after the last argument?  I prefer function( x, y ), but Tidyverse  suggests not putting spaces inside or outside side of parentheses see https://style.tidyverse.org/syntax.html#spacing so it would allow function(x, y) but not function( x, y ).  
 
 Also, I have always put the { } for a function in line with each other and the first letter of the function name like the examples below but both TV and Google recommend the opening { after function, for example 
 Add2 <- function(x) {
