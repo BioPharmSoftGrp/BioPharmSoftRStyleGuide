@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3 Functions | R Style Guide</title>
+  <meta name="description" content="3 Functions | R Style Guide" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3 Functions | R Style Guide" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3 Functions | R Style Guide" />
+  
+  
+  
+
+<meta name="author" content="J. Kyle Wathen" />
+<meta name="author" content="Add other Authors" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="files.html"/>
+<link rel="next" href="variables.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115082821-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115082821-1');
+</script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Style Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#references"><i class="fa fa-check"></i><b>1.1</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="files.html"><a href="files.html"><i class="fa fa-check"></i><b>2</b> Files</a><ul>
+<li class="chapter" data-level="2.1" data-path="files.html"><a href="files.html#file-naming"><i class="fa fa-check"></i><b>2.1</b> File Naming</a></li>
+<li class="chapter" data-level="2.2" data-path="files.html"><a href="files.html#file-organization"><i class="fa fa-check"></i><b>2.2</b> File Organization</a></li>
+<li class="chapter" data-level="2.3" data-path="files.html"><a href="files.html#internal-structure"><i class="fa fa-check"></i><b>2.3</b> Internal Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions</a><ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#naming"><i class="fa fa-check"></i><b>3.1</b> Naming</a></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#structure"><i class="fa fa-check"></i><b>3.2</b> Structure</a></li>
+<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#explicit-returns"><i class="fa fa-check"></i><b>3.3</b> Explicit Returns</a></li>
+<li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#local-function"><i class="fa fa-check"></i><b>3.4</b> Local function</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="variables.html"><a href="variables.html"><i class="fa fa-check"></i><b>4</b> Variables</a><ul>
+<li class="chapter" data-level="4.1" data-path="variables.html"><a href="variables.html#naming-1"><i class="fa fa-check"></i><b>4.1</b> Naming</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="syntax.html"><a href="syntax.html"><i class="fa fa-check"></i><b>5</b> Syntax</a><ul>
+<li class="chapter" data-level="5.1" data-path="syntax.html"><a href="syntax.html#spacing"><i class="fa fa-check"></i><b>5.1</b> Spacing</a></li>
+<li class="chapter" data-level="5.2" data-path="syntax.html"><a href="syntax.html#code-blocks"><i class="fa fa-check"></i><b>5.2</b> Code Blocks</a></li>
+<li class="chapter" data-level="5.3" data-path="syntax.html"><a href="syntax.html#assingment"><i class="fa fa-check"></i><b>5.3</b> Assingment</a></li>
+<li class="chapter" data-level="5.4" data-path="syntax.html"><a href="syntax.html#semicolons"><i class="fa fa-check"></i><b>5.4</b> Semicolons</a></li>
+<li class="chapter" data-level="5.5" data-path="syntax.html"><a href="syntax.html#comments"><i class="fa fa-check"></i><b>5.5</b> Comments</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/kwathen/BioPharmSoftRStyleGuide" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Style Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="functions" class="section level1">
+<h1><span class="header-section-number">3</span> Functions</h1>
+<div id="naming" class="section level2">
+<h2><span class="header-section-number">3.1</span> Naming</h2>
+<p>Function names should be meaningful and descriptive and provide insight to what the function does. This style agrees with Google’s recommendation of using BigCamelCase for function names. Do not use special characters in the function name, but use letters or numbers is acceptable. That is, -, . and _ should not be included in a function name. While - or _ do make the function names more readable than running words together like functionname, the use of - or _ requires extra key strokes when compared to BigCamelCase where the first letter of each word is capitalized. To avoid confusion with S3 methods a . should not be used in a function name unless it is to define an S3 method, see example below.</p>
+<p>In addition, it is recommended that function names should contain verbs or a word that describes the action the function performs. Vague generic function names like PerformTasks() or Com() should not be used.</p>
+<pre><code># Good Example 
+ComputePosteriorParameters()
+ComputePosteriorParameters.BetaBinom()   # If ComputePosteriorParameters is a generic function this is fine
+SimulatePatientArrivalTimes()
+
+# Bad Example
+post.par()        # Incorrect name capitalization and including ., non-descriptive
+arrival-time()    # Incorrect name capitalization and including -
+addhr()           # Capitalizaiton and vague
+ComputePosteriorParameters.BetaBinom()   # If ComputePosteriorParameters is NOT a generic function this is not acceptable</code></pre>
+</div>
+<div id="structure" class="section level2">
+<h2><span class="header-section-number">3.2</span> Structure</h2>
+<p>Functions should be self contained and only depend on the arguments. They should NOT use variables in a higher scope. A call
+to a function with the same arguments should always return the same value, unless the function is supposed to produce random variables ect.
+[QUESTION: What does everyone thing about there not being a preceding and trailing space before the first argument and after the last argument? I prefer function( x, y ), but Tidyverse suggests not putting spaces inside or outside side of parentheses see <a href="https://style.tidyverse.org/syntax.html#spacing" class="uri">https://style.tidyverse.org/syntax.html#spacing</a> so it would allow function(x, y) but not function( x, y ).</p>
+<p>Also, I have always put the { } for a function in line with each other and the first letter of the function name like the examples below but both TV and Google recommend the opening { after function, for example
+Add2 &lt;- function(x) {
+X &lt;- x + 2
+return(x)
+}</p>
+<p>I am okay with either approach. ]</p>
+<pre><code># Example
+
+#--------------------------------------------------------------------------------------
+# VERY BAD STYLE -  What this function returns depends on what y was before the call
+#--------------------------------------------------------------------------------------
+MyFunction &lt;- function(x)
+{
+    x &lt;- x + y
+    return(x)
+}
+
+y &lt;- 5
+MyFunction(4)   # return 9
+y &lt;- 10
+MyFunction(4)    #returns 14
+
+
+#--------------------------------------------------------------------------------------
+# Acceptable example - a call to the function only depends on arguments
+#--------------------------------------------------------------------------------------
+MyFunction2 &lt;- function( x, y )
+{
+    x &lt;- x + y
+    return( x )
+}
+
+y &lt;- 5
+MyFunction2( 4, 7 )   # return 11
+y &lt;- 10
+MyFunction2( 4, 7 )    #returns 7</code></pre>
+</div>
+<div id="explicit-returns" class="section level2">
+<h2><span class="header-section-number">3.3</span> Explicit Returns</h2>
+<p>Do NOT rely on R’s implicit return feature as an explicit return is much clearer for the reader. Tidyverse and Google do not agree on this recommendation and this guide follows Google as it is much more transparent to developers that may not be as familiar with R.</p>
+<pre><code># Good Example - explicit return
+MyFunction(x, y)
+{
+    return(x + y)
+}
+
+# Bad Example - rely on explicit return can be confusing and more error prone
+MyFunction(x, y)
+{
+    x + y
+}</code></pre>
+</div>
+<div id="local-function" class="section level2">
+<h2><span class="header-section-number">3.4</span> Local function</h2>
+<p>A local function refers to defining a function within another funciton. Local functions are difficult to test, understand and prone to errors. Local functions should be avoided unless necessary.</p>
+<pre><code>## Good Example 
+
+
+
+## Bad Example
+AnalyzeData &lt;- function( strType, dfData ){
+    if( strType == &quot;ONE&quot; ) ana &lt;- function( dfData ) lm( dfData$y ~ dfData$x )
+    if( strType == &quot;TWO&quot; ) ana &lt;- function( dfData ) lm( dfData$y ~ dfData$x + dfData$x*dfData$Trt )
+    if( strTYpe == &quot;Three&quot; ) &lt;- function( dfData ) lm( dfData$y ~ dfData$x + dfData$x2 )
+    
+    fit &lt;- ana( dfData )
+}</code></pre>
+<p>[TODO: Add more here]</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="files.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="variables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/kwathen/BioPharmSoftRStyleGuide/Functions.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

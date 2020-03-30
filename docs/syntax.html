@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>5 Syntax | R Style Guide</title>
+  <meta name="description" content="5 Syntax | R Style Guide" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="5 Syntax | R Style Guide" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="5 Syntax | R Style Guide" />
+  
+  
+  
+
+<meta name="author" content="J. Kyle Wathen" />
+<meta name="author" content="Add other Authors" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="variables.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115082821-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115082821-1');
+</script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Style Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#references"><i class="fa fa-check"></i><b>1.1</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="files.html"><a href="files.html"><i class="fa fa-check"></i><b>2</b> Files</a><ul>
+<li class="chapter" data-level="2.1" data-path="files.html"><a href="files.html#file-naming"><i class="fa fa-check"></i><b>2.1</b> File Naming</a></li>
+<li class="chapter" data-level="2.2" data-path="files.html"><a href="files.html#file-organization"><i class="fa fa-check"></i><b>2.2</b> File Organization</a></li>
+<li class="chapter" data-level="2.3" data-path="files.html"><a href="files.html#internal-structure"><i class="fa fa-check"></i><b>2.3</b> Internal Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions</a><ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#naming"><i class="fa fa-check"></i><b>3.1</b> Naming</a></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#structure"><i class="fa fa-check"></i><b>3.2</b> Structure</a></li>
+<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#explicit-returns"><i class="fa fa-check"></i><b>3.3</b> Explicit Returns</a></li>
+<li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#local-function"><i class="fa fa-check"></i><b>3.4</b> Local function</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="variables.html"><a href="variables.html"><i class="fa fa-check"></i><b>4</b> Variables</a><ul>
+<li class="chapter" data-level="4.1" data-path="variables.html"><a href="variables.html#naming-1"><i class="fa fa-check"></i><b>4.1</b> Naming</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="syntax.html"><a href="syntax.html"><i class="fa fa-check"></i><b>5</b> Syntax</a><ul>
+<li class="chapter" data-level="5.1" data-path="syntax.html"><a href="syntax.html#spacing"><i class="fa fa-check"></i><b>5.1</b> Spacing</a></li>
+<li class="chapter" data-level="5.2" data-path="syntax.html"><a href="syntax.html#code-blocks"><i class="fa fa-check"></i><b>5.2</b> Code Blocks</a></li>
+<li class="chapter" data-level="5.3" data-path="syntax.html"><a href="syntax.html#assingment"><i class="fa fa-check"></i><b>5.3</b> Assingment</a></li>
+<li class="chapter" data-level="5.4" data-path="syntax.html"><a href="syntax.html#semicolons"><i class="fa fa-check"></i><b>5.4</b> Semicolons</a></li>
+<li class="chapter" data-level="5.5" data-path="syntax.html"><a href="syntax.html#comments"><i class="fa fa-check"></i><b>5.5</b> Comments</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/kwathen/BioPharmSoftRStyleGuide" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Style Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="syntax" class="section level1">
+<h1><span class="header-section-number">5</span> Syntax</h1>
+<p>[TODO: Add more here]</p>
+<div id="spacing" class="section level2">
+<h2><span class="header-section-number">5.1</span> Spacing</h2>
+</div>
+<div id="code-blocks" class="section level2">
+<h2><span class="header-section-number">5.2</span> Code Blocks</h2>
+</div>
+<div id="assingment" class="section level2">
+<h2><span class="header-section-number">5.3</span> Assingment</h2>
+</div>
+<div id="semicolons" class="section level2">
+<h2><span class="header-section-number">5.4</span> Semicolons</h2>
+<p>Don’t put ; at the end of a line and don’t use ; to put multiple commands on one line.</p>
+<pre><code># Good Examples
+x &lt;- 5
+y &lt;- 2
+z &lt;- 3
+
+#Bad Examples
+x &lt;- 5; y &lt;- 2; z &lt;- 3;
+
+
+x &lt;- 5; y &lt;- 2; 
+z &lt;- 3;
+
+x &lt;- 5; 
+y &lt;- 2; 
+z &lt;- 3;</code></pre>
+</div>
+<div id="comments" class="section level2">
+<h2><span class="header-section-number">5.5</span> Comments</h2>
+<pre><code>Comments should be meaningful and add understanding to the code.  If your code requires a comment for most lines, consider rewritting be clearer.  Utilizing naming conventions is helpful.  In addition, using orgnized files and creating functions for complex code blocks can be helpful.</code></pre>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="variables.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/kwathen/BioPharmSoftRStyleGuide/Syntax.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 Files | R Style Guide</title>
+  <meta name="description" content="2 Files | R Style Guide" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 Files | R Style Guide" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 Files | R Style Guide" />
+  
+  
+  
+
+<meta name="author" content="J. Kyle Wathen" />
+<meta name="author" content="Add other Authors" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="functions.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115082821-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115082821-1');
+</script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Style Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#references"><i class="fa fa-check"></i><b>1.1</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="files.html"><a href="files.html"><i class="fa fa-check"></i><b>2</b> Files</a><ul>
+<li class="chapter" data-level="2.1" data-path="files.html"><a href="files.html#file-naming"><i class="fa fa-check"></i><b>2.1</b> File Naming</a></li>
+<li class="chapter" data-level="2.2" data-path="files.html"><a href="files.html#file-organization"><i class="fa fa-check"></i><b>2.2</b> File Organization</a></li>
+<li class="chapter" data-level="2.3" data-path="files.html"><a href="files.html#internal-structure"><i class="fa fa-check"></i><b>2.3</b> Internal Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions</a><ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#naming"><i class="fa fa-check"></i><b>3.1</b> Naming</a></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#structure"><i class="fa fa-check"></i><b>3.2</b> Structure</a></li>
+<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#explicit-returns"><i class="fa fa-check"></i><b>3.3</b> Explicit Returns</a></li>
+<li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#local-function"><i class="fa fa-check"></i><b>3.4</b> Local function</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="variables.html"><a href="variables.html"><i class="fa fa-check"></i><b>4</b> Variables</a><ul>
+<li class="chapter" data-level="4.1" data-path="variables.html"><a href="variables.html#naming-1"><i class="fa fa-check"></i><b>4.1</b> Naming</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="syntax.html"><a href="syntax.html"><i class="fa fa-check"></i><b>5</b> Syntax</a><ul>
+<li class="chapter" data-level="5.1" data-path="syntax.html"><a href="syntax.html#spacing"><i class="fa fa-check"></i><b>5.1</b> Spacing</a></li>
+<li class="chapter" data-level="5.2" data-path="syntax.html"><a href="syntax.html#code-blocks"><i class="fa fa-check"></i><b>5.2</b> Code Blocks</a></li>
+<li class="chapter" data-level="5.3" data-path="syntax.html"><a href="syntax.html#assingment"><i class="fa fa-check"></i><b>5.3</b> Assingment</a></li>
+<li class="chapter" data-level="5.4" data-path="syntax.html"><a href="syntax.html#semicolons"><i class="fa fa-check"></i><b>5.4</b> Semicolons</a></li>
+<li class="chapter" data-level="5.5" data-path="syntax.html"><a href="syntax.html#comments"><i class="fa fa-check"></i><b>5.5</b> Comments</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/kwathen/BioPharmSoftRStyleGuide" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Style Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="files" class="section level1">
+<h1><span class="header-section-number">2</span> Files</h1>
+<div id="file-naming" class="section level2">
+<h2><span class="header-section-number">2.1</span> File Naming</h2>
+<p>File names should be meaningful and end in .R. This style agrees with Google’s recommendation of using BigCamelCase for file names. Do not use special characters in the file names and use only letters or numbers. That is, no spaces, - or _ should be included in a file name. While - or _ do make the file names more readable than running words together like runningwordstogether, the use of - or _ requires extra key strokes when compared to BigCamelCase where the first letter of each word is capitalized.</p>
+<p>File names should be descriptive and provide insight into what the file contains. Generic names like foo.r or stuff.r should not be used. Vague file names like calculate.r are discouraged and more descriptive like CalculatePosteriorProbs.R are preferred.</p>
+<p>Examples:</p>
+<pre><code># Good Examples
+CalcuatePosteriorProbs.R
+AnalyzeSurvivalData.R 
+InputFunctions.R
+
+# Bad 
+calculate.r
+foo.r
+get file name.r
+functions for stuff.r </code></pre>
+<p>If files should be viewed or executed in a particular order, prefix the file name with a number using two digit format starting at 00.</p>
+<pre><code>00_SimulateData.R
+01_SimulateArrivalTimes.R
+02_CreateDataSet.R
+...
+09_LogisticRegressionModel.R
+10_BetaBinomialModel.R</code></pre>
+<p>Capitalization can be important when sharing files with collaborators on differing operating systems and source control systems. Do not name files where the only difference is the capitalization.</p>
+</div>
+<div id="file-organization" class="section level2">
+<h2><span class="header-section-number">2.2</span> File Organization</h2>
+</div>
+<div id="internal-structure" class="section level2">
+<h2><span class="header-section-number">2.3</span> Internal Structure</h2>
+<p>Files should be kept as short as possible and not include numerous functions or R source. If a file contains many functions and is very long, it should be broken into meaningful files to group common functionality. Break the file into meaningful code blocks, preferably as functions, and separate code blocks by comments using -, # or =. [ QUESTION: Should we allow all 3 for comments, eg -, # and = or just a subset like the first two? ]</p>
+<pre><code># Create simulated data ------ 
+
+# Plot results ====
+
+# Save output ####</code></pre>
+<p>Each comment should end with 4 consecutive -, # or = as this helps with providing well organized outline in R studio. In addition, If you create a comment block, surrounded by —–, ===== or #### then please make sure you put a space preceding the last charater. The space is to help with creating organized document outline in RStudio for R files.</p>
+<pre><code># Good Example - The extra space creates the document outline in figure below
+#------------------------------------------------------ -
+# Add2 - This function adds 2 to x
+#------------------------------------------------------ -
+Add2 &lt;- function(x){
+    return(x + 2)
+}
+    
+#------------------------------------------------------ -
+# Subtract2 - This function subtracts 2 from x
+#------------------------------------------------------ -
+Subtract2 &lt;- function(x){
+    return(x - 2)
+}
+
+#--------------------------------------------- - 
+# Divide variable by 2
+#--------------------------------------------- - 
+Divide2 &lt;- function(x){
+    return(x/2)
+}</code></pre>
+<p>Good example with red arrows to indicate the extra space and resulting file outline to the right.
+<img src="images/FileCommentGoodExample.png" style="display: block; margin: auto;" /></p>
+<pre><code># Bad Example - Ending a solid line of 4 - or = result in an (Untitled) in the outline
+#-------------------------------------------------------
+# Add 2 - This function adds 2 to x
+#-------------------------------------------------------
+Add2 &lt;- function(x){
+    return(x + 2)
+}
+
+#-------------------------------------------------------
+# Subtract 2 - This function subtracts 2 from x
+#-------------------------------------------------------
+Subtract2 &lt;- function(x){
+    return(x - 2)
+}
+
+#-------------------------------------------------------
+#  Divide variable by 2
+#-------------------------------------------------------
+Divide2 &lt;- function(x){
+    return(x/2)
+}</code></pre>
+<p>Bad example of comments, notice how the (Untitled) appears in the document outline
+<img src="images/FileCommentBadExample.png" style="display: block; margin: auto;" /></p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/kwathen/BioPharmSoftRStyleGuide/Files.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
