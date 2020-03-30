@@ -77,4 +77,21 @@ Do NOT rely on R's implicit return feature as an explicit return is much clearer
     {
         x + y
     }
+
+## Local function
+A local function refers to defining a function within another funciton.  Local functions are difficult to test, understand and prone to errors.  Local functions should be avoided unless necessary.
+
+    ## Good Example 
     
+    
+    
+    ## Bad Example
+    AnalyzeData <- function( strType, dfData ){
+        if( strType == "ONE" ) ana <- function( dfData ) lm( dfData$y ~ dfData$x )
+        if( strType == "TWO" ) ana <- function( dfData ) lm( dfData$y ~ dfData$x + dfData$x*dfData$Trt )
+        if( strTYpe == "Three" ) <- function( dfData ) lm( dfData$y ~ dfData$x + dfData$x2 )
+        
+        fit <- ana( dfData )
+    }
+    
+[TODO: Add more here]

@@ -1,0 +1,31 @@
+# Syntax
+
+[TODO: Add more here]
+
+## Spacing
+
+## Code Blocks
+
+## Assingment
+
+## Semicolons 
+Don't put ; at the end of a line and don't use ; to put multiple commands on one line.
+
+    # Good Examples
+    x <- 5
+    y <- 2
+    z <- 3
+    
+    #Bad Examples
+    x <- 5; y <- 2; z <- 3;
+
+    
+    x <- 5; y <- 2; 
+    z <- 3;
+    
+    x <- 5; 
+    y <- 2; 
+    z <- 3;
+
+## Comments
+    Comments should be meaningful and add understanding to the code.  If your code requires a comment for most lines, consider rewritting be clearer.  Utilizing naming conventions is helpful.  In addition, using orgnized files and creating functions for complex code blocks can be helpful.
