@@ -7,7 +7,7 @@ rmd_files: [
  
     "Files.Rmd",
     "Functions.Rmd",
-    "Variables.Rmd"
+    "Variables.Rmd",
     "Syntax.Rmd"
 ]
 
