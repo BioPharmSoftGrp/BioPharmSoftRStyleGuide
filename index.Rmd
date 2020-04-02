@@ -1,7 +1,7 @@
 ---
 title: "R Style Guide"
-author: ["J. Kyle Wathen", "Add other Authors"]
-date: "2/25/2020"
+author: ["J. Kyle Wathen", "Fei Chen", "Add other Authors"]
+date: "3/31/2020"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -22,8 +22,13 @@ When developing software, the developer should always have a goal in mind.  This
 
 3. Extremely long files can be very difficult to follow and test and should be avoided. 
 
-4.  Where there are style options, pick a option and be consistent within a set of code such as a project, package or shiny app.  
+4. Where there are style options, pick a option and be consistent within a set of code such as a project, package or shiny app.  
 
+5. Keep in mind that, programming, like writing, is a naturally
+individualistic endeavor. But unlike writing, software development is
+often a joint and collaborative effort. Therefore great attention must
+be paid on balancing of individual style against collective
+consistency.
 
 ## References
 Google’s R Style Guide

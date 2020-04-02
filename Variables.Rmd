@@ -12,7 +12,7 @@ Single letter variable names should only be used for looping variables, but it i
 
 Since R does not require types, for example integer, double, vector etc it can be VERY help and there for strongly encouraged to use common prefixes for variable names. 
 
-Use the following prefixes to help other understand what the intended type of a variable is.
+Use the following prefixes to help others understand what the intended type of a variable is.
      a.  Prefix integer variable with an n then camel case, eg nQtyOfReps would be an integer variable for the quantity of replications, nQtyOfPats = quantity of patients
      b. Prefix double of float variables with d, eg dMean would be a double/float variable for mean.
      c. Prefix vectors with v, eg vMeans would be a vector of means

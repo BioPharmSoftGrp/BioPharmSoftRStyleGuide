@@ -4,9 +4,71 @@
 
 ## Spacing
 
+Spacing is important so others can browse your code with more
+ease. Put space around arithematic and logical operators, and after
+",". Whether space should be inserted immediately after "("/"[" and
+before ")"/"]" is a matter of personal choice, but whatever style you
+prefer, adhere to it throughout your project.
+
+    # Bad Examples
+      m=1
+      s=2
+      x=rnorm(1000,mean=m,sd=s)
+
+    # Good Examples
+      dMean <- 1 # mean
+      dSd <- 2 # standard deviation
+      nSize <- 1000 # sample size
+      vSamp <- rnorm(n = nSize, mean = dMean, sd = dSd)
+
+    # Depends on preferece
+      x[i,] vs x[i, ] vs x[ i, ]
+      f(x) vs f( x )
+
 ## Code Blocks
 
+Code should be organized so that there is less repetition and more abstraction.
+
+    # Bad Example
+      a <- sin(1.2) + exp(5.7)
+      b <- sin(2.4) + exp(-2)
+      c <- a + b
+
+    # Better Example
+      f <- function(x, y) sin(x) + exp(b)
+      a <- f(2.4, -2)
+      b <- f(1.2, 5.7)
+      c <- a + b
+
+One liner function definitions are reasonable if the line is short, however for readability
+
+    # Even Better Example
+      f <- function(x, y)
+              {
+                sin(x) + exp(b)
+              }
+      a <- f(2.4, -2)
+      b <- f(1.2, 5.7)
+      c <- a + b
+
 ## Assingment
+
+There are three ways to assign a variable values in R.
+
+    # Five ways to say thank you
+    thx <- 1
+    thx <<- 1
+    thx = 1
+    1 -> thx
+    1 ->> thx
+
+
+Even though "=" and "<-" are interchangeble, typical R style guides
+urge the use of "<-", one for historical reasons, another for
+consistency with the double "<<-" operator for which "=" has no
+counterpart. The rightwards form work naturally in conjunction with
+pipe operator "%>%" although the use of "%>" lends to obfuscation and
+is discouraged.
 
 ## Semicolons 
 Don't put ; at the end of a line and don't use ; to put multiple commands on one line.
@@ -29,3 +91,6 @@ Don't put ; at the end of a line and don't use ; to put multiple commands on one
 
 ## Comments
     Comments should be meaningful and add understanding to the code.  If your code requires a comment for most lines, consider rewritting be clearer.  Utilizing naming conventions is helpful.  In addition, using orgnized files and creating functions for complex code blocks can be helpful.
+
+There are tools to help you better format your code, packages such as
+"formatR", "styler".
