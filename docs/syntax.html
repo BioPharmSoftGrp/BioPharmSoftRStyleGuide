@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Syntax | R Style Guide</title>
   <meta name="description" content="5 Syntax | R Style Guide" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Syntax | R Style Guide" />
   <meta property="og:type" content="book" />
@@ -22,6 +22,7 @@
   
 
 <meta name="author" content="J. Kyle Wathen" />
+<meta name="author" content="Fei Chen" />
 <meta name="author" content="Add other Authors" />
 
 
@@ -127,12 +128,64 @@
 <p>[TODO: Add more here]</p>
 <div id="spacing" class="section level2">
 <h2><span class="header-section-number">5.1</span> Spacing</h2>
+<p>Spacing is important so others can browse your code with more
+ease. Put space around arithematic and logical operators, and after
+“,”. Whether space should be inserted immediately after “(”/“[" and
+before ")"/"]” is a matter of personal choice, but whatever style you
+prefer, adhere to it throughout your project.</p>
+<pre><code># Bad Examples
+  m=1
+  s=2
+  x=rnorm(1000,mean=m,sd=s)
+
+# Good Examples
+  dMean &lt;- 1 # mean
+  dSd &lt;- 2 # standard deviation
+  nSize &lt;- 1000 # sample size
+  vSamp &lt;- rnorm(n = nSize, mean = dMean, sd = dSd)
+
+# Depends on preferece
+  x[i,] vs x[i, ] vs x[ i, ]
+  f(x) vs f( x )</code></pre>
 </div>
 <div id="code-blocks" class="section level2">
 <h2><span class="header-section-number">5.2</span> Code Blocks</h2>
+<p>Code should be organized so that there is less repetition and more abstraction.</p>
+<pre><code># Bad Example
+  a &lt;- sin(1.2) + exp(5.7)
+  b &lt;- sin(2.4) + exp(-2)
+  c &lt;- a + b
+
+# Better Example
+  f &lt;- function(x, y) sin(x) + exp(b)
+  a &lt;- f(2.4, -2)
+  b &lt;- f(1.2, 5.7)
+  c &lt;- a + b</code></pre>
+<p>One liner function definitions are reasonable if the line is short, however for readability</p>
+<pre><code># Even Better Example
+  f &lt;- function(x, y)
+          {
+            sin(x) + exp(b)
+          }
+  a &lt;- f(2.4, -2)
+  b &lt;- f(1.2, 5.7)
+  c &lt;- a + b</code></pre>
 </div>
 <div id="assingment" class="section level2">
 <h2><span class="header-section-number">5.3</span> Assingment</h2>
+<p>There are three ways to assign a variable values in R.</p>
+<pre><code># Five ways to say thank you
+thx &lt;- 1
+thx &lt;&lt;- 1
+thx = 1
+1 -&gt; thx
+1 -&gt;&gt; thx</code></pre>
+<p>Even though “=” and “&lt;-” are interchangeble, typical R style guides
+urge the use of “&lt;-”, one for historical reasons, another for
+consistency with the double “&lt;&lt;-” operator for which “=” has no
+counterpart. The rightwards form work naturally in conjunction with
+pipe operator “%&gt;%” although the use of “%&gt;” lends to obfuscation and
+is discouraged.</p>
 </div>
 <div id="semicolons" class="section level2">
 <h2><span class="header-section-number">5.4</span> Semicolons</h2>
@@ -156,6 +209,8 @@ z &lt;- 3;</code></pre>
 <div id="comments" class="section level2">
 <h2><span class="header-section-number">5.5</span> Comments</h2>
 <pre><code>Comments should be meaningful and add understanding to the code.  If your code requires a comment for most lines, consider rewritting be clearer.  Utilizing naming conventions is helpful.  In addition, using orgnized files and creating functions for complex code blocks can be helpful.</code></pre>
+<p>There are tools to help you better format your code, packages such as
+“formatR”, “styler”.</p>
 
 </div>
 </div>

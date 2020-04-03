@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>4 Variables | R Style Guide</title>
   <meta name="description" content="4 Variables | R Style Guide" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
   <meta property="og:title" content="4 Variables | R Style Guide" />
   <meta property="og:type" content="book" />
@@ -22,6 +22,7 @@
   
 
 <meta name="author" content="J. Kyle Wathen" />
+<meta name="author" content="Fei Chen" />
 <meta name="author" content="Add other Authors" />
 
 
@@ -131,7 +132,7 @@
 <p>Abbreviating long words with a common abbreviation is acceptable but be consistent within a code base or repository. For example, Qty or Quant for Quantity, Pat or Pats for Patients. Avoid using single letter abbreviations.</p>
 <p>Single letter variable names should only be used for looping variables, but it is often easier to read and follow your source code if the looping variable is meaningful. For example, using iPat is better than i as an variable that loops over patients in a vector and is easier to follow.</p>
 <p>Since R does not require types, for example integer, double, vector etc it can be VERY help and there for strongly encouraged to use common prefixes for variable names.</p>
-<p>Use the following prefixes to help other understand what the intended type of a variable is.
+<p>Use the following prefixes to help others understand what the intended type of a variable is.
 a. Prefix integer variable with an n then camel case, eg nQtyOfReps would be an integer variable for the quantity of replications, nQtyOfPats = quantity of patients
 b. Prefix double of float variables with d, eg dMean would be a double/float variable for mean.
 c. Prefix vectors with v, eg vMeans would be a vector of means

@@ -5,7 +5,7 @@
 ## Spacing
 
 Spacing is important so others can browse your code with more
-ease. Put space around arithematic and logical operators, and after
+ease. Put space around arithmetic and logical operators, and after
 ",". Whether space should be inserted immediately after "("/"[" and
 before ")"/"]" is a matter of personal choice, but whatever style you
 prefer, adhere to it throughout your project.
@@ -51,9 +51,9 @@ One liner function definitions are reasonable if the line is short, however for 
       b <- f(1.2, 5.7)
       c <- a + b
 
-## Assingment
+## Assignment
 
-There are three ways to assign a variable values in R.
+There are five ways to assign a variable values in R.
 
     # Five ways to say thank you
     thx <- 1
@@ -90,7 +90,7 @@ Don't put ; at the end of a line and don't use ; to put multiple commands on one
     z <- 3;
 
 ## Comments
-    Comments should be meaningful and add understanding to the code.  If your code requires a comment for most lines, consider rewritting be clearer.  Utilizing naming conventions is helpful.  In addition, using orgnized files and creating functions for complex code blocks can be helpful.
+    Comments should be meaningful and add understanding to the code.  If your code requires a comment for most lines, consider rewritting be clearer.  Utilizing naming conventions is helpful.  In addition, using organized files and creating functions for complex code blocks can be helpful.
 
 There are tools to help you better format your code, packages such as
 "formatR", "styler".
