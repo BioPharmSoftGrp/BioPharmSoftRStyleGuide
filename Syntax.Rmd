@@ -21,9 +21,10 @@ prefer, adhere to it throughout your project.
       nSize <- 1000 # sample size
       vSamp <- rnorm(n = nSize, mean = dMean, sd = dSd)
 
-    # Depends on preferece
-      x[i,] vs x[i, ] vs x[ i, ]
-      f(x) vs f( x )
+    # Last is preferred making longer code block less cramped, especially when there are multiple arguments
+     x[i,] and f(x) # Acceptable
+     x[i, ] # Better
+     x[ i, ] and f( x )# Best
 
 ## Code Blocks
 
