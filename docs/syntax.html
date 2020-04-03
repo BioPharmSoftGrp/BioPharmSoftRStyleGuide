@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>5 Syntax | R Style Guide</title>
   <meta name="description" content="5 Syntax | R Style Guide" />
-  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="5 Syntax | R Style Guide" />
   <meta property="og:type" content="book" />
@@ -131,8 +131,8 @@
 <h2><span class="header-section-number">5.1</span> Spacing</h2>
 <p>Spacing is important so others can browse your code with more
 ease. Put space around arithmetic and logical operators, and after
-“,”. Whether space should be inserted immediately after “(”/“[" and
-before ")"/"]” is a matter of personal choice, but whatever style you
+“,”. Whether space should be inserted immediately after ( or [ and
+before ) or ] is a matter of personal choice, but whatever style you
 prefer, adhere to it throughout your project.</p>
 <pre><code># Bad Examples
   m=1
@@ -158,16 +158,17 @@ prefer, adhere to it throughout your project.</p>
   c &lt;- a + b
 
 # Better Example
-  f &lt;- function(x, y) sin(x) + exp(b)
+  f &lt;- function(x, y){ return( sin(x) + exp(b) ) }
   a &lt;- f(2.4, -2)
   b &lt;- f(1.2, 5.7)
   c &lt;- a + b</code></pre>
-<p>One liner function definitions are reasonable if the line is short, however for readability</p>
+<p>One liner function definitions are reasonable if the line is short, simple and follow the explicit return, however for readability and testing the following is preferred.</p>
 <pre><code># Even Better Example
   f &lt;- function(x, y)
-          {
-            sin(x) + exp(b)
-          }
+  {
+    sin(x) + exp(b)
+  }
+  
   a &lt;- f(2.4, -2)
   b &lt;- f(1.2, 5.7)
   c &lt;- a + b</code></pre>
@@ -181,7 +182,7 @@ thx &lt;&lt;- 1
 thx = 1
 1 -&gt; thx
 1 -&gt;&gt; thx</code></pre>
-<p>Even though “=” and “&lt;-” are interchangeble, typical R style guides
+<p>Even though “=” and “&lt;-” are interchangeable, typical R style guides
 urge the use of “&lt;-”, one for historical reasons, another for
 consistency with the double “&lt;&lt;-” operator for which “=” has no
 counterpart. The rightwards form work naturally in conjunction with

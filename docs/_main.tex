@@ -1,36 +1,55 @@
-\documentclass[]{book}
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
 \usepackage{lmodern}
 \usepackage{amssymb,amsmath}
 \usepackage{ifxetex,ifluatex}
-\usepackage{fixltx2e} % provides \textsubscript
 \ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
-\else % if luatex or xelatex
-  \ifxetex
-    \usepackage{mathspec}
-  \else
-    \usepackage{fontspec}
-  \fi
-  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
 \fi
-% use upquote if available, for straight quotes in verbatim environments
+% Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-% use microtype if available
-\IfFileExists{microtype.sty}{%
-\usepackage{microtype}
-\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
 }{}
-\usepackage{hyperref}
-\hypersetup{unicode=true,
-            pdftitle={R Style Guide},
-            pdfauthor={J. Kyle Wathen; Fei Chen; Add other Authors},
-            pdfborder={0 0 0},
-            breaklinks=true}
-\urlstyle{same}  % don't use monospace font for urls
-\usepackage{natbib}
-\bibliographystyle{plainnat}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={R Style Guide},
+  pdfauthor={J. Kyle Wathen; Fei Chen; Add other Authors},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
 \usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -40,52 +59,20 @@
 % margins by default, and it is still possible to overwrite the defaults
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
-\IfFileExists{parskip.sty}{%
-\usepackage{parskip}
-}{% else
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{6pt plus 2pt minus 1pt}
-}
-\setlength{\emergencystretch}{3em}  % prevent overfull lines
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
+\usepackage[]{natbib}
+\bibliographystyle{plainnat}
 
-%%% Use protect on footnotes to avoid problems with footnotes in titles
-\let\rmarkdownfootnote\footnote%
-\def\footnote{\protect\rmarkdownfootnote}
-
-%%% Change title format to be more compact
-\usepackage{titling}
-
-% Create subtitle command for use in maketitle
-\providecommand{\subtitle}[1]{
-  \posttitle{
-    \begin{center}\large#1\end{center}
-    }
-}
-
-\setlength{\droptitle}{-2em}
-
-  \title{R Style Guide}
-    \pretitle{\vspace{\droptitle}\centering\huge}
-  \posttitle{\par}
-    \author{J. Kyle Wathen \\ Fei Chen \\ Add other Authors}
-    \preauthor{\centering\large\emph}
-  \postauthor{\par}
-      \predate{\centering\large\emph}
-  \postdate{\par}
-    \date{3/31/2020}
-
+\title{R Style Guide}
+\author{J. Kyle Wathen \and Fei Chen \and Add other Authors}
+\date{3/31/2020}
 
 \begin{document}
 \maketitle
@@ -190,7 +177,7 @@ Files should be kept as short as possible and not include numerous functions or 
 # Save output ####
 \end{verbatim}
 
-Each comment should end with 4 consecutive -, \# or = as this helps with providing well organized outline in R studio. In addition, If you create a comment block, surrounded by -----, ===== or \#\#\#\# then please make sure you put a space preceding the last charater. The space is to help with creating organized document outline in RStudio for R files.
+Each comment should end with 4 consecutive -, \# or = as this helps with providing well organized outline in R studio. In addition, If you create a comment block, surrounded by -----, ===== or \#\#\#\# then please make sure you put a space preceding the last charter. The space is to help with creating organized document outline in RStudio for R files.
 
 \begin{verbatim}
 # Good Example - The extra space creates the document outline in figure below
@@ -341,7 +328,7 @@ MyFunction(x, y)
 \hypertarget{local-function}{%
 \section{Local function}\label{local-function}}
 
-A local function refers to defining a function within another funciton. Local functions are difficult to test, understand and prone to errors. Local functions should be avoided unless necessary.
+A local function refers to defining a function within another function. Local functions are difficult to test, understand and prone to errors. Local functions should be avoided unless necessary.
 
 \begin{verbatim}
 ## Good Example 
@@ -376,7 +363,7 @@ Single letter variable names should only be used for looping variables, but it i
 
 Since R does not require types, for example integer, double, vector etc it can be VERY help and there for strongly encouraged to use common prefixes for variable names.
 
-Use the following prefixes to help other understand what the intended type of a variable is.
+Use the following prefixes to help others understand what the intended type of a variable is.
 a. Prefix integer variable with an n then camel case, eg nQtyOfReps would be an integer variable for the quantity of replications, nQtyOfPats = quantity of patients
 b. Prefix double of float variables with d, eg dMean would be a double/float variable for mean.
 c.~Prefix vectors with v, eg vMeans would be a vector of means
@@ -418,6 +405,12 @@ x.mad
 \hypertarget{spacing}{%
 \section{Spacing}\label{spacing}}
 
+Spacing is important so others can browse your code with more
+ease. Put space around arithmetic and logical operators, and after
+``,''. Whether space should be inserted immediately after ( or {[} and
+before ) or {]} is a matter of personal choice, but whatever style you
+prefer, adhere to it throughout your project.
+
 \begin{verbatim}
 # Bad Examples
   m=1
@@ -425,13 +418,68 @@ x.mad
   x=rnorm(1000,mean=m,sd=s)
 
 # Good Examples
+  dMean <- 1 # mean
+  dSd <- 2 # standard deviation
+  nSize <- 1000 # sample size
+  vSamp <- rnorm(n = nSize, mean = dMean, sd = dSd)
+
+# Depends on preferece
+  x[i,] vs x[i, ] vs x[ i, ]
+  f(x) vs f( x )
 \end{verbatim}
 
 \hypertarget{code-blocks}{%
 \section{Code Blocks}\label{code-blocks}}
 
-\hypertarget{assingment}{%
-\section{Assingment}\label{assingment}}
+Code should be organized so that there is less repetition and more abstraction.
+
+\begin{verbatim}
+# Bad Example
+  a <- sin(1.2) + exp(5.7)
+  b <- sin(2.4) + exp(-2)
+  c <- a + b
+
+# Better Example
+  f <- function(x, y){ return( sin(x) + exp(b) ) }
+  a <- f(2.4, -2)
+  b <- f(1.2, 5.7)
+  c <- a + b
+\end{verbatim}
+
+One liner function definitions are reasonable if the line is short, simple and follow the explicit return, however for readability and testing the following is preferred.
+
+\begin{verbatim}
+# Even Better Example
+  f <- function(x, y)
+  {
+    sin(x) + exp(b)
+  }
+  
+  a <- f(2.4, -2)
+  b <- f(1.2, 5.7)
+  c <- a + b
+\end{verbatim}
+
+\hypertarget{assignment}{%
+\section{Assignment}\label{assignment}}
+
+There are five ways to assign a variable values in R.
+
+\begin{verbatim}
+# Five ways to say thank you
+thx <- 1
+thx <<- 1
+thx = 1
+1 -> thx
+1 ->> thx
+\end{verbatim}
+
+Even though ``='' and ``\textless-'' are interchangeable, typical R style guides
+urge the use of ``\textless-'', one for historical reasons, another for
+consistency with the double ``\textless\textless-'' operator for which ``='' has no
+counterpart. The rightwards form work naturally in conjunction with
+pipe operator ``\%\textgreater\%'' although the use of ``\%\textgreater{}'' lends to obfuscation and
+is discouraged.
 
 \hypertarget{semicolons}{%
 \section{Semicolons}\label{semicolons}}
@@ -460,8 +508,18 @@ z <- 3;
 \section{Comments}\label{comments}}
 
 \begin{verbatim}
-Comments should be meaningful and add understanding to the code.  If your code requires a comment for most lines, consider rewritting be clearer.  Utilizing naming conventions is helpful.  In addition, using orgnized files and creating functions for complex code blocks can be helpful.
+Comments should be meaningful and add understanding to the code.
+If your code requires a comment for most lines, consider
+rewritting be clearer.  Utilizing naming conventions is helpful.
+In addition, using organized files and creating functions for
+complex code blocks can be helpful.
 \end{verbatim}
 
+\hypertarget{furthermore}{%
+\section{Furthermore}\label{furthermore}}
+
+There are tools to help you better format your code, packages such as
+``formatR'', ``styler'', that can manage spacing and indentation
+reasonably.
 
 \end{document}

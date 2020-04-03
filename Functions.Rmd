@@ -79,7 +79,7 @@ Do NOT rely on R's implicit return feature as an explicit return is much clearer
     }
 
 ## Local function
-A local function refers to defining a function within another funciton.  Local functions are difficult to test, understand and prone to errors.  Local functions should be avoided unless necessary.
+A local function refers to defining a function within another function.  Local functions are difficult to test, understand and prone to errors.  Local functions should be avoided unless necessary.
 
     ## Good Example 
     

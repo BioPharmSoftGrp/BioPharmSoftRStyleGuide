@@ -43,7 +43,7 @@ Files should be kept as short as possible and not include numerous functions or 
     
     # Save output ####
 
-Each comment should end with 4 consecutive -, # or = as this helps with providing well organized outline in R studio.  In addition,  If you create a comment block, surrounded by -----, ===== or #### then please make sure you put a space preceding the last charater.  The space is to help with creating organized document outline in RStudio for R files.  
+Each comment should end with 4 consecutive -, # or = as this helps with providing well organized outline in R studio.  In addition,  If you create a comment block, surrounded by -----, ===== or #### then please make sure you put a space preceding the last charter.  The space is to help with creating organized document outline in RStudio for R files.  
 
     # Good Example - The extra space creates the document outline in figure below
     #------------------------------------------------------ -

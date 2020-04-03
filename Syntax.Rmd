@@ -6,8 +6,8 @@
 
 Spacing is important so others can browse your code with more
 ease. Put space around arithmetic and logical operators, and after
-",". Whether space should be inserted immediately after "("/"[" and
-before ")"/"]" is a matter of personal choice, but whatever style you
+",". Whether space should be inserted immediately after ( or [ and
+before ) or ] is a matter of personal choice, but whatever style you
 prefer, adhere to it throughout your project.
 
     # Bad Examples
@@ -35,18 +35,19 @@ Code should be organized so that there is less repetition and more abstraction.
       c <- a + b
 
     # Better Example
-      f <- function(x, y) sin(x) + exp(b)
+      f <- function(x, y){ return( sin(x) + exp(b) ) }
       a <- f(2.4, -2)
       b <- f(1.2, 5.7)
       c <- a + b
 
-One liner function definitions are reasonable if the line is short, however for readability
+One liner function definitions are reasonable if the line is short, simple and follow the explicit return, however for readability and testing the following is preferred.
 
     # Even Better Example
       f <- function(x, y)
-              {
-                sin(x) + exp(b)
-              }
+      {
+        sin(x) + exp(b)
+      }
+      
       a <- f(2.4, -2)
       b <- f(1.2, 5.7)
       c <- a + b
@@ -62,7 +63,7 @@ There are five ways to assign a variable values in R.
     1 -> thx
     1 ->> thx
 
-Even though "=" and "<-" are interchangeble, typical R style guides
+Even though "=" and "<-" are interchangeable, typical R style guides
 urge the use of "<-", one for historical reasons, another for
 consistency with the double "<<-" operator for which "=" has no
 counterpart. The rightwards form work naturally in conjunction with
