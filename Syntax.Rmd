@@ -62,7 +62,6 @@ There are five ways to assign a variable values in R.
     1 -> thx
     1 ->> thx
 
-
 Even though "=" and "<-" are interchangeble, typical R style guides
 urge the use of "<-", one for historical reasons, another for
 consistency with the double "<<-" operator for which "=" has no
@@ -90,7 +89,15 @@ Don't put ; at the end of a line and don't use ; to put multiple commands on one
     z <- 3;
 
 ## Comments
-    Comments should be meaningful and add understanding to the code.  If your code requires a comment for most lines, consider rewritting be clearer.  Utilizing naming conventions is helpful.  In addition, using organized files and creating functions for complex code blocks can be helpful.
+
+    Comments should be meaningful and add understanding to the code.
+    If your code requires a comment for most lines, consider
+    rewritting be clearer.  Utilizing naming conventions is helpful.
+    In addition, using organized files and creating functions for
+    complex code blocks can be helpful.
+
+## Furthermore
 
 There are tools to help you better format your code, packages such as
-"formatR", "styler".
+"formatR", "styler", that can manage spacing and indentation
+reasonably.
