@@ -6,7 +6,7 @@ This project is the begining of the development of style guide for R from the Bi
 This file will all be used to collect quesiton (at least for now).
 
 A couple question I have and if you have a preference let me know.  Saying “Either is fine” is also acceptable and we could include it that way.  Main reason for asking now is some of these impact more of the guide. 
-
+ 
 **Question 1:**
 Spacing – Tidyverse recommends that you don’t put a leading or trailing space in function calls, vector or matrix subscripts. 
 For example,
