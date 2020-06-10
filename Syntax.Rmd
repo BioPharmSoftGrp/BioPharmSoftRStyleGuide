@@ -46,11 +46,11 @@ One liner function definitions are reasonable if the line is short, simple and f
     # Even Better Example
       f <- function(x, y)
       {
-        sin(x) + exp(b)
+        return( sin(x) + exp(b) )
       }
       
-      a <- f(2.4, -2)
-      b <- f(1.2, 5.7)
+      a <- f( 2.4, -2 )
+      b <- f( 1.2, 5.7 )
       c <- a + b
 
 ## Assignment

@@ -205,7 +205,7 @@ Divide2 <- function(x){
 
 Good example with red arrows to indicate the extra space and resulting file outline to the right.
 
-\begin{center}\includegraphics{images/FileCommentGoodExample} \end{center}
+\begin{center}\includegraphics[width=5.09in]{images/FileCommentGoodExample} \end{center}
 
 \begin{verbatim}
 # Bad Example - Ending a solid line of 4 - or = result in an (Untitled) in the outline
@@ -233,7 +233,7 @@ Divide2 <- function(x){
 
 Bad example of comments, notice how the (Untitled) appears in the document outline
 
-\begin{center}\includegraphics{images/FileCommentBadExample} \end{center}
+\begin{center}\includegraphics[width=5.04in]{images/FileCommentBadExample} \end{center}
 
 \hypertarget{functions}{%
 \chapter{Functions}\label{functions}}
@@ -453,11 +453,11 @@ One liner function definitions are reasonable if the line is short, simple and f
 # Even Better Example
   f <- function(x, y)
   {
-    sin(x) + exp(b)
+    return( sin(x) + exp(b) )
   }
   
-  a <- f(2.4, -2)
-  b <- f(1.2, 5.7)
+  a <- f( 2.4, -2 )
+  b <- f( 1.2, 5.7 )
   c <- a + b
 \end{verbatim}
 
