@@ -8,7 +8,8 @@ rmd_files: [
     "Files.Rmd",
     "Functions.Rmd",
     "Variables.Rmd",
-    "Syntax.Rmd"
-]
+    "Syntax.Rmd", 
+    "GitHub.Rmd"
+  ]
 
 

@@ -104,6 +104,11 @@
 <li class="chapter" data-level="5.5" data-path="syntax.html"><a href="syntax.html#comments"><i class="fa fa-check"></i><b>5.5</b> Comments</a></li>
 <li class="chapter" data-level="5.6" data-path="syntax.html"><a href="syntax.html#furthermore"><i class="fa fa-check"></i><b>5.6</b> Furthermore</a></li>
 </ul></li>
+<li class="chapter" data-level="6" data-path="github.html"><a href="github.html"><i class="fa fa-check"></i><b>6</b> GitHub</a><ul>
+<li class="chapter" data-level="6.1" data-path="github.html"><a href="github.html#commit-messages"><i class="fa fa-check"></i><b>6.1</b> Commit messages</a></li>
+<li class="chapter" data-level="6.2" data-path="github.html"><a href="github.html#pull-requests"><i class="fa fa-check"></i><b>6.2</b> Pull Requests</a></li>
+<li class="chapter" data-level="6.3" data-path="github.html"><a href="github.html#branch-names"><i class="fa fa-check"></i><b>6.3</b> Branch names</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/kwathen/BioPharmSoftRStyleGuide" target="blank">Published with bookdown</a></li>
 
@@ -130,16 +135,21 @@
 <h2><span class="header-section-number">4.1</span> Naming</h2>
 <p>Variable names should be meaningful and descriptive. Do not use special characters in the variable names, use only letters or numbers. That is, no spaces, - or _ should be included in a variable name. While - or _ do make the variables names more readable than running words together like runningwordstogether, the use of - (not allowed in R) or _ requires extra key strokes. Do not use a . in variable names as this can cause confusion for the S3 object system.</p>
 <p>Variable names should be in camelCase with the first letter being lower case. For example, sampleMean and not SampleMean as the the first letter capital is reserved for function names.</p>
-<p>Abbreviating long words with a common abbreviation is acceptable but be consistent within a code base or repository. For example, Qty or Quant for Quantity, Pat or Pats for Patients. Avoid using single letter abbreviations.</p>
+<p>Abbreviating long words with a common abbreviation is acceptable but be consistent within a code base or repository. For example, Qty or Quant for Quantity, Pat or Pats for Patients. Avoid using single letter abbreviations. Within a project it is often helpful to create a list of common abbreviations in the project so that all developers use consistent naming.</p>
 <p>Single letter variable names should only be used for looping variables, but it is often easier to read and follow your source code if the looping variable is meaningful. For example, using iPat is better than i as an variable that loops over patients in a vector and is easier to follow.</p>
-<p>Since R does not require types, for example integer, double, vector etc it can be VERY help and there for strongly encouraged to use common prefixes for variable names.</p>
-<p>Use the following prefixes to help others understand what the intended type of a variable is.
-a. Prefix integer variable with an n then camel case, eg nQtyOfReps would be an integer variable for the quantity of replications, nQtyOfPats = quantity of patients
-b. Prefix double of float variables with d, eg dMean would be a double/float variable for mean.
-c. Prefix vectors with v, eg vMeans would be a vector of means
-d. Prefix matrix with m, eg mVarCov would be a matrix for the variance-covariance.
-e. Prefix list with a l, eg lData would be list of data
-f. Prefix a class variable with a c, eg cAnalysis = structure( list(), class= “TTest”" )</p>
+<p>Since R does not require types, for example integer, double, vector etc it can be VERY help and there for strongly encouraged to use common prefixes for variable names. Many users find this helpful, especially, for functions as the user of a function can easily understand what variable types are expected.</p>
+<p>Use the following prefixes to help others understand what the intended type of a variable is.</p>
+<ol style="list-style-type: decimal">
+<li>Prefix <strong>integer</strong> variable with an n then camel case, eg nQtyOfReps would be an integer variable for the quantity of replications, nQtyOfPats = quantity of patients</li>
+<li>Prefix <strong>double</strong> of <strong>float</strong> variables with d, eg dMean would be a double/float variable for mean.</li>
+<li>Prefix <strong>logical</strong> value (TRUE or FALSE) with a b, eg bSingleArm, bAdjust</li>
+<li>Prefix <strong>vectors</strong> with v, eg vMeans would be a vector of means</li>
+<li>Prefix <strong>matrix</strong> with m, eg mVarCov would be a matrix for the variance-covariance.</li>
+<li>Prefix a <strong>dataframe</strong> with df, eg dfPats would be a dataframe containing patient data.</li>
+<li>Prefix <strong>list</strong> with a l, eg lData would be list of data</li>
+<li>Prefix a <strong>class</strong> variable with a c, eg cAnalysis = structure( list(), class= “TTest”" )</li>
+</ol>
+<p>Examples</p>
 <pre><code># Good Examples
 qtyOfPatients 
 nQtyOfPatient   # Better name because it is clear it should be an integer
@@ -155,7 +165,7 @@ for(i in vPatients){
 
 # Better example because more complex loops the iPat is clearer than i
 for(iPat in vPatients){
-    vTreatment[iPat] &lt;- vPatients[iPat]
+    vTreatment[ iPat ] &lt;- vPatients[ iPat ]
 }
 
 # Bad Examples

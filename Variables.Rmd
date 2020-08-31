@@ -6,19 +6,24 @@ Variable names should be meaningful and descriptive.  Do not use special charact
 
 Variable names should be in camelCase with the first letter being lower case.  For example, sampleMean and not SampleMean as the the first letter capital is reserved for function names. 
 
-Abbreviating long words with a common abbreviation is acceptable but be consistent within a code base or repository.  For example, Qty or Quant for Quantity, Pat or Pats for Patients.  Avoid using single letter abbreviations.  
+Abbreviating long words with a common abbreviation is acceptable but be consistent within a code base or repository.  For example, Qty or Quant for Quantity, Pat or Pats for Patients.  Avoid using single letter abbreviations.  Within a project it is often helpful to create a list of common abbreviations in the project so that all developers use consistent naming.
 
 Single letter variable names should only be used for looping variables, but it is often easier to read and follow your source code if the looping variable is meaningful.  For example, using iPat is better than i as an variable that loops over patients in a vector and is easier to follow.  
 
-Since R does not require types, for example integer, double, vector etc it can be VERY help and there for strongly encouraged to use common prefixes for variable names. 
+Since R does not require types, for example integer, double, vector etc it can be VERY help and there for strongly encouraged to use common prefixes for variable names.   Many users find this helpful, especially, for functions as the user of a function can easily understand what variable types are expected.
 
 Use the following prefixes to help others understand what the intended type of a variable is.
-     a.  Prefix integer variable with an n then camel case, eg nQtyOfReps would be an integer variable for the quantity of replications, nQtyOfPats = quantity of patients
-     b. Prefix double of float variables with d, eg dMean would be a double/float variable for mean.
-     c. Prefix vectors with v, eg vMeans would be a vector of means
-     d. Prefix matrix with m, eg mVarCov would be a matrix for the variance-covariance.
-     e. Prefix list with a l, eg lData would be list of data
-     f. Prefix a class variable with a c, eg cAnalysis = structure( list(), class= "TTest"" )
+
+1. Prefix **integer** variable with an n then camel case, eg nQtyOfReps would be an integer variable for the quantity of replications, nQtyOfPats = quantity of patients
+1. Prefix **double** of **float** variables with d, eg dMean would be a double/float variable for mean.
+1. Prefix **logical** value (TRUE or FALSE) with a b, eg bSingleArm, bAdjust 
+1. Prefix **vectors** with v, eg vMeans would be a vector of means
+1. Prefix **matrix** with m, eg mVarCov would be a matrix for the variance-covariance.
+1. Prefix a **dataframe** with df, eg dfPats would be a dataframe containing patient data.
+1. Prefix **list** with a l, eg lData would be list of data
+1. Prefix a **class** variable with a c, eg cAnalysis = structure( list(), class= "TTest"" )
+
+Examples
 
     # Good Examples
     qtyOfPatients 
@@ -35,7 +40,7 @@ Use the following prefixes to help others understand what the intended type of a
     
     # Better example because more complex loops the iPat is clearer than i
     for(iPat in vPatients){
-        vTreatment[iPat] <- vPatients[iPat]
+        vTreatment[ iPat ] <- vPatients[ iPat ]
     }
     
     # Bad Examples

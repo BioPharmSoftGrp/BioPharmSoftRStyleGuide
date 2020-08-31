@@ -1,0 +1,29 @@
+# GitHub 
+
+## Commit messages
+Commit messages can be very helpful to figure out what a commit does.  Non-descriptive commit messages should be avoided.  The following general guidelines should be considered when writing commit messages:
+
+* The first line is the subject of the commit and should give a brief description
+* If you need to include more detail skip a line then include more content
+* If you are fixing issues you can add Fix #<issue number> as this will close the issue on GitHub when the commit is merged into the main branch.
+
+## Pull Requests
+
+The title of the pull request should provide a brief description of what the pull request does.  
+
+If the PR fixes an issue include the phrase Fixes #<issue number> so the issue is closed. 
+
+## Branch names 
+Having descriptive branch names can be very useful in team development. Consistently naming branches can help with transparency and ease of tracking what branches are used for.  Typically, branches are created to address issues such as new features, bug fixes or documentation for a particular branch like, Development, Dev-V0.1.2, master.  Using the following labels Feature, Bugfix, Doc (for documentation) a branch name should be made like the following:
+
+<label>-<Key word(s)>-Branch name
+
+For example, if you are working a branch name Dev-V0.1.3 and you want to create a feature branch with a brief description of perform analysis then a good branch name would be
+
+Feature-Add-Analysis-Dev-V0.1.3 
+
+and if you wanted to reference an issue #14 then you could also include the issue number in the branch, for example
+
+Feature14-Add-Analysis-Dev-V0.1.3.  
+
+It may also be helpful for the developer to add their initials to the end of the branch name incase two similar issues are in development at the same time but require differnt branches for development. 
