@@ -1,7 +1,5 @@
 # Syntax
 
-[TODO: Add more here]
-
 ## Spacing
 
 Spacing is important so others can browse your code with more
@@ -68,8 +66,10 @@ Even though "=" and "<-" are interchangeable, typical R style guides
 urge the use of "<-", one for historical reasons, another for
 consistency with the double "<<-" operator for which "=" has no
 counterpart. The rightwards form work naturally in conjunction with
-pipe operator "%>%" although the use of "%>" lends to obfuscation and
+pipe operator "%>%" although the use of "%>%" lends to obfuscation and
 is discouraged.
+
+For clarity and consistency, it is recommended to only use <- and <<- and do not use =, -> and ->>.
 
 ## Semicolons 
 Don't put ; at the end of a line and don't use ; to put multiple commands on one line.
@@ -92,11 +92,11 @@ Don't put ; at the end of a line and don't use ; to put multiple commands on one
 
 ## Comments
 
-    Comments should be meaningful and add understanding to the code.
-    If your code requires a comment for most lines, consider
-    rewritting be clearer.  Utilizing naming conventions is helpful.
-    In addition, using organized files and creating functions for
-    complex code blocks can be helpful.
+Comments should be meaningful and add understanding to the code.
+If your code requires a comment for most lines, consider
+rewritting be clearer.  Utilizing naming conventions is helpful.
+In addition, using organized files and creating functions for
+complex code blocks can be helpful.
 
 ## Furthermore
 

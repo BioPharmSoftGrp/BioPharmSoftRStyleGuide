@@ -82,16 +82,36 @@ Do NOT rely on R's implicit return feature as an explicit return is much clearer
 A local function refers to defining a function within another function.  Local functions are difficult to test, understand and prone to errors.  Local functions should be avoided unless necessary.
 
     ## Good Example 
+    RunAnalysis1 <- function( dfData )
+    {
+        return( lm( dfData$y ~ dfData$x ) )
+    }
+    RunAnalysis2 <- function( dfData )
+    {
+        return( lm( dfData$y ~ dfData$x + dfData$x*dfData$Trt ) )
+    }
+    RunAnalysis3 <- function( dfData )
+    {
+        return( lm( dfData$y ~ dfData$x + dfData$x2 ) )
+    }
     
-    
+    AnalyzeData <- function( strType, dfData )
+    {
+        if( strType == "ONE" )   fit <- RunAnalysis1( dfData )
+        if( strType == "TWO" )   fit <- RunAnalysis2( dfData )
+        if( strType == "THREE" ) fit <- RunAnalysis3( dfData )
+        
+        return( fit )
+    }
     
     ## Bad Example
     AnalyzeData <- function( strType, dfData ){
-        if( strType == "ONE" ) ana <- function( dfData ) lm( dfData$y ~ dfData$x )
-        if( strType == "TWO" ) ana <- function( dfData ) lm( dfData$y ~ dfData$x + dfData$x*dfData$Trt )
-        if( strTYpe == "Three" ) <- function( dfData ) lm( dfData$y ~ dfData$x + dfData$x2 )
+        if( strType == "ONE" )   ana <- function( dfData ){ lm( dfData$y ~ dfData$x ) }
+        if( strType == "TWO" )   ana <- function( dfData ){ lm( dfData$y ~ dfData$x + dfData$x*dfData$Trt )}
+        if( strType == "THREE" ) ana <- function( dfData ){ lm( dfData$y ~ dfData$x + dfData$x2 )}
         
         fit <- ana( dfData )
+        return( fit )
     }
     
-[TODO: Add more here]
+The above "Good" example provides functions RunAnalysis1, RunAnalysis2, RunAnalysis3 that are much easier to test.  However, AnalyzeData could be improved further in this example with the use of s3 classes where the class( dfData ) determines which analysis to call thus eliminating the need for the if statements. 

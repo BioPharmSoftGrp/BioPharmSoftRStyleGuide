@@ -26,6 +26,7 @@
 <meta name="author" content="Add other Authors" />
 
 
+<meta name="date" content="2020-09-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -207,18 +208,38 @@ MyFunction(x, y)
 <h2><span class="header-section-number">3.4</span> Local function</h2>
 <p>A local function refers to defining a function within another function. Local functions are difficult to test, understand and prone to errors. Local functions should be avoided unless necessary.</p>
 <pre><code>## Good Example 
+RunAnalysis1 &lt;- function( dfData )
+{
+    return( lm( dfData$y ~ dfData$x ) )
+}
+RunAnalysis2 &lt;- function( dfData )
+{
+    return( lm( dfData$y ~ dfData$x + dfData$x*dfData$Trt ) )
+}
+RunAnalysis3 &lt;- function( dfData )
+{
+    return( lm( dfData$y ~ dfData$x + dfData$x2 ) )
+}
 
-
+AnalyzeData &lt;- function( strType, dfData )
+{
+    if( strType == &quot;ONE&quot; )   fit &lt;- RunAnalysis1( dfData )
+    if( strType == &quot;TWO&quot; )   fit &lt;- RunAnalysis2( dfData )
+    if( strType == &quot;THREE&quot; ) fit &lt;- RunAnalysis3( dfData )
+    
+    return( fit )
+}
 
 ## Bad Example
 AnalyzeData &lt;- function( strType, dfData ){
-    if( strType == &quot;ONE&quot; ) ana &lt;- function( dfData ) lm( dfData$y ~ dfData$x )
-    if( strType == &quot;TWO&quot; ) ana &lt;- function( dfData ) lm( dfData$y ~ dfData$x + dfData$x*dfData$Trt )
-    if( strTYpe == &quot;Three&quot; ) &lt;- function( dfData ) lm( dfData$y ~ dfData$x + dfData$x2 )
+    if( strType == &quot;ONE&quot; )   ana &lt;- function( dfData ){ lm( dfData$y ~ dfData$x ) }
+    if( strType == &quot;TWO&quot; )   ana &lt;- function( dfData ){ lm( dfData$y ~ dfData$x + dfData$x*dfData$Trt )}
+    if( strType == &quot;THREE&quot; ) ana &lt;- function( dfData ){ lm( dfData$y ~ dfData$x + dfData$x2 )}
     
     fit &lt;- ana( dfData )
+    return( fit )
 }</code></pre>
-<p>[TODO: Add more here]</p>
+<p>The above “Good” example provides functions RunAnalysis1, RunAnalysis2, RunAnalysis3 that are much easier to test. However, AnalyzeData could be improved further in this example with the use of s3 classes where the class( dfData ) determines which analysis to call thus eliminating the need for the if statements.</p>
 
 </div>
 </div>

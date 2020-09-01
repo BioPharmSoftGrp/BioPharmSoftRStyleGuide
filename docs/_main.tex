@@ -72,7 +72,7 @@
 
 \title{R Style Guide}
 \author{J. Kyle Wathen \and Fei Chen \and Add other Authors}
-\date{3/31/2020}
+\date{September 01, 2020}
 
 \begin{document}
 \maketitle
@@ -332,20 +332,40 @@ A local function refers to defining a function within another function. Local fu
 
 \begin{verbatim}
 ## Good Example 
+RunAnalysis1 <- function( dfData )
+{
+    return( lm( dfData$y ~ dfData$x ) )
+}
+RunAnalysis2 <- function( dfData )
+{
+    return( lm( dfData$y ~ dfData$x + dfData$x*dfData$Trt ) )
+}
+RunAnalysis3 <- function( dfData )
+{
+    return( lm( dfData$y ~ dfData$x + dfData$x2 ) )
+}
 
-
+AnalyzeData <- function( strType, dfData )
+{
+    if( strType == "ONE" )   fit <- RunAnalysis1( dfData )
+    if( strType == "TWO" )   fit <- RunAnalysis2( dfData )
+    if( strType == "THREE" ) fit <- RunAnalysis3( dfData )
+    
+    return( fit )
+}
 
 ## Bad Example
 AnalyzeData <- function( strType, dfData ){
-    if( strType == "ONE" ) ana <- function( dfData ) lm( dfData$y ~ dfData$x )
-    if( strType == "TWO" ) ana <- function( dfData ) lm( dfData$y ~ dfData$x + dfData$x*dfData$Trt )
-    if( strTYpe == "Three" ) <- function( dfData ) lm( dfData$y ~ dfData$x + dfData$x2 )
+    if( strType == "ONE" )   ana <- function( dfData ){ lm( dfData$y ~ dfData$x ) }
+    if( strType == "TWO" )   ana <- function( dfData ){ lm( dfData$y ~ dfData$x + dfData$x*dfData$Trt )}
+    if( strType == "THREE" ) ana <- function( dfData ){ lm( dfData$y ~ dfData$x + dfData$x2 )}
     
     fit <- ana( dfData )
+    return( fit )
 }
 \end{verbatim}
 
-{[}TODO: Add more here{]}
+The above ``Good'' example provides functions RunAnalysis1, RunAnalysis2, RunAnalysis3 that are much easier to test. However, AnalyzeData could be improved further in this example with the use of s3 classes where the class( dfData ) determines which analysis to call thus eliminating the need for the if statements.
 
 \hypertarget{variables}{%
 \chapter{Variables}\label{variables}}
@@ -416,8 +436,6 @@ x.mad
 
 \hypertarget{syntax}{%
 \chapter{Syntax}\label{syntax}}
-
-{[}TODO: Add more here{]}
 
 \hypertarget{spacing}{%
 \section{Spacing}\label{spacing}}
@@ -496,8 +514,10 @@ Even though ``='' and ``\textless-'' are interchangeable, typical R style guides
 urge the use of ``\textless-'', one for historical reasons, another for
 consistency with the double ``\textless\textless-'' operator for which ``='' has no
 counterpart. The rightwards form work naturally in conjunction with
-pipe operator ``\%\textgreater\%'' although the use of ``\%\textgreater{}'' lends to obfuscation and
+pipe operator ``\%\textgreater\%'' although the use of ``\%\textgreater\%'' lends to obfuscation and
 is discouraged.
+
+For clarity and consistency, it is recommended to only use \textless- and \textless\textless- and do not use =, -\textgreater{} and -\textgreater\textgreater.
 
 \hypertarget{semicolons}{%
 \section{Semicolons}\label{semicolons}}
@@ -525,13 +545,11 @@ z <- 3;
 \hypertarget{comments}{%
 \section{Comments}\label{comments}}
 
-\begin{verbatim}
 Comments should be meaningful and add understanding to the code.
 If your code requires a comment for most lines, consider
-rewritting be clearer.  Utilizing naming conventions is helpful.
+rewritting be clearer. Utilizing naming conventions is helpful.
 In addition, using organized files and creating functions for
 complex code blocks can be helpful.
-\end{verbatim}
 
 \hypertarget{furthermore}{%
 \section{Furthermore}\label{furthermore}}
