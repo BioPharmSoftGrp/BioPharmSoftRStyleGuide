@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 GitHub | R Style Guide</title>
+  <meta name="description" content="6 GitHub | R Style Guide" />
+  <meta name="generator" content="bookdown 0.19 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 GitHub | R Style Guide" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 GitHub | R Style Guide" />
+  
+  
+  
+
+<meta name="author" content="J. Kyle Wathen" />
+<meta name="author" content="Fei Chen" />
+<meta name="author" content="Add other Authors" />
+
+
+<meta name="date" content="2020-09-01" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="syntax.html"/>
+
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-115082821-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-115082821-1');
+</script>
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">R Style Guide</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#references"><i class="fa fa-check"></i><b>1.1</b> References</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="files.html"><a href="files.html"><i class="fa fa-check"></i><b>2</b> Files</a><ul>
+<li class="chapter" data-level="2.1" data-path="files.html"><a href="files.html#file-naming"><i class="fa fa-check"></i><b>2.1</b> File Naming</a></li>
+<li class="chapter" data-level="2.2" data-path="files.html"><a href="files.html#file-organization"><i class="fa fa-check"></i><b>2.2</b> File Organization</a></li>
+<li class="chapter" data-level="2.3" data-path="files.html"><a href="files.html#internal-structure"><i class="fa fa-check"></i><b>2.3</b> Internal Structure</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>3</b> Functions</a><ul>
+<li class="chapter" data-level="3.1" data-path="functions.html"><a href="functions.html#naming"><i class="fa fa-check"></i><b>3.1</b> Naming</a></li>
+<li class="chapter" data-level="3.2" data-path="functions.html"><a href="functions.html#structure"><i class="fa fa-check"></i><b>3.2</b> Structure</a></li>
+<li class="chapter" data-level="3.3" data-path="functions.html"><a href="functions.html#explicit-returns"><i class="fa fa-check"></i><b>3.3</b> Explicit Returns</a></li>
+<li class="chapter" data-level="3.4" data-path="functions.html"><a href="functions.html#local-function"><i class="fa fa-check"></i><b>3.4</b> Local function</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="variables.html"><a href="variables.html"><i class="fa fa-check"></i><b>4</b> Variables</a><ul>
+<li class="chapter" data-level="4.1" data-path="variables.html"><a href="variables.html#naming-1"><i class="fa fa-check"></i><b>4.1</b> Naming</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="syntax.html"><a href="syntax.html"><i class="fa fa-check"></i><b>5</b> Syntax</a><ul>
+<li class="chapter" data-level="5.1" data-path="syntax.html"><a href="syntax.html#spacing"><i class="fa fa-check"></i><b>5.1</b> Spacing</a></li>
+<li class="chapter" data-level="5.2" data-path="syntax.html"><a href="syntax.html#code-blocks"><i class="fa fa-check"></i><b>5.2</b> Code Blocks</a></li>
+<li class="chapter" data-level="5.3" data-path="syntax.html"><a href="syntax.html#assignment"><i class="fa fa-check"></i><b>5.3</b> Assignment</a></li>
+<li class="chapter" data-level="5.4" data-path="syntax.html"><a href="syntax.html#semicolons"><i class="fa fa-check"></i><b>5.4</b> Semicolons</a></li>
+<li class="chapter" data-level="5.5" data-path="syntax.html"><a href="syntax.html#comments"><i class="fa fa-check"></i><b>5.5</b> Comments</a></li>
+<li class="chapter" data-level="5.6" data-path="syntax.html"><a href="syntax.html#furthermore"><i class="fa fa-check"></i><b>5.6</b> Furthermore</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="github.html"><a href="github.html"><i class="fa fa-check"></i><b>6</b> GitHub</a><ul>
+<li class="chapter" data-level="6.1" data-path="github.html"><a href="github.html#commit-messages"><i class="fa fa-check"></i><b>6.1</b> Commit messages</a></li>
+<li class="chapter" data-level="6.2" data-path="github.html"><a href="github.html#pull-requests"><i class="fa fa-check"></i><b>6.2</b> Pull Requests</a></li>
+<li class="chapter" data-level="6.3" data-path="github.html"><a href="github.html#branch-names"><i class="fa fa-check"></i><b>6.3</b> Branch names</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/kwathen/BioPharmSoftRStyleGuide" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">R Style Guide</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="github" class="section level1">
+<h1><span class="header-section-number">6</span> GitHub</h1>
+<div id="commit-messages" class="section level2">
+<h2><span class="header-section-number">6.1</span> Commit messages</h2>
+<p>Commit messages can be very helpful to figure out what a commit does. Non-descriptive commit messages should be avoided. The following general guidelines should be considered when writing commit messages:</p>
+<ul>
+<li>The first line is the subject of the commit and should give a brief description</li>
+<li>If you need to include more detail skip a line then include more content</li>
+<li>If you are fixing issues you can add Fix #<issue number> as this will close the issue on GitHub when the commit is merged into the main branch.</li>
+</ul>
+</div>
+<div id="pull-requests" class="section level2">
+<h2><span class="header-section-number">6.2</span> Pull Requests</h2>
+<p>The title of the pull request should provide a brief description of what the pull request does.</p>
+<p>If the PR fixes an issue include the phrase Fixes #<issue number> so the issue is closed.</p>
+</div>
+<div id="branch-names" class="section level2">
+<h2><span class="header-section-number">6.3</span> Branch names</h2>
+<p>Having descriptive branch names can be very useful in team development. Consistently naming branches can help with transparency and ease of tracking what branches are used for. Typically, branches are created to address issues such as new features, bug fixes or documentation for a particular branch like, Development, Dev-V0.1.2, master. Using the following labels Feature, Bugfix, Doc (for documentation) a branch name should be made like the following:</p>
+<p><label>-&lt;Key word(s)&gt;-Branch name</p>
+<p>For example, if you are working a branch name Dev-V0.1.3 and you want to create a feature branch with a brief description of perform analysis then a good branch name would be</p>
+<p>Feature-Add-Analysis-Dev-V0.1.3</p>
+<p>and if you wanted to reference an issue #14 then you could also include the issue number in the branch, for example</p>
+<p>Feature14-Add-Analysis-Dev-V0.1.3.</p>
+<p>It may also be helpful for the developer to add their initials to the end of the branch name incase two similar issues are in development at the same time but require differnt branches for development.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="syntax.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/kwathen/BioPharmSoftRStyleGuide/GitHub.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
