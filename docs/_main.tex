@@ -72,7 +72,7 @@
 
 \title{R Style Guide}
 \author{J. Kyle Wathen \and Fei Chen \and Add other Authors}
-\date{September 01, 2020}
+\date{December 02, 2020}
 
 \begin{document}
 \maketitle
@@ -588,16 +588,16 @@ If the PR fixes an issue include the phrase Fixes \# so the issue is closed.
 
 Having descriptive branch names can be very useful in team development. Consistently naming branches can help with transparency and ease of tracking what branches are used for. Typically, branches are created to address issues such as new features, bug fixes or documentation for a particular branch like, Development, Dev-V0.1.2, master. Using the following labels Feature, Bugfix, Doc (for documentation) a branch name should be made like the following:
 
--\textless Key word(s)\textgreater-Branch name
+\textless{} label \textgreater-\textless{} Key word(s) \textgreater-\textless{} Developer Initials \textgreater{}
 
-For example, if you are working a branch name Dev-V0.1.3 and you want to create a feature branch with a brief description of perform analysis then a good branch name would be
+For example, if you are working a branch named Dev and you want to create a feature branch with a brief description of perform analysis and your initials are KW then a good branch name would be
 
-Feature-Add-Analysis-Dev-V0.1.3
+Feature-Add-Analysis-KW
 
 and if you wanted to reference an issue \#14 then you could also include the issue number in the branch, for example
 
-Feature14-Add-Analysis-Dev-V0.1.3.
+Feature14-Add-Analysis-KW.
 
-It may also be helpful for the developer to add their initials to the end of the branch name incase two similar issues are in development at the same time but require differnt branches for development.
+A common practice is to create a Dev branch, set Dev as the default branch and require code reviews and Pull Requests for merges to the main or Dev branches. Typically feature branches are created off of the Dev branch then PRs will merge feature branches into Dev. After a release version is completed then Dev is merged into the main branch via a PR.
 
 \end{document}
