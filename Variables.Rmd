@@ -21,7 +21,8 @@ Use the following prefixes to help others understand what the intended type of a
 1. Prefix **matrix** with m, eg mVarCov would be a matrix for the variance-covariance.
 1. Prefix a **dataframe** with df, eg dfPats would be a dataframe containing patient data.
 1. Prefix **list** with a l, eg lData would be list of data
-1. Prefix a **class** variable with a c, eg cAnalysis = structure( list(), class= "TTest"" )
+1. Prefix a **class** variable with a c, eg cAnalysis <- structure( list(), class= "TTest"" )
+1. Prefix a **string** variable with str, eg strName, strGroup 
 
 Examples
 
